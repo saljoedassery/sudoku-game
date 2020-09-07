@@ -2,6 +2,9 @@ import React from "react";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+// import Loader from 'react-loader-spinner'
+
 class Actions extends React.Component {
 
   confirmClear = () => {
@@ -11,7 +14,7 @@ class Actions extends React.Component {
           <div className='confirmation-box'>
             <h1>Are you sure?</h1>
             <p>Do you want to clear the board? All you entered value will diappear</p>
-            <button className ="clear-button" onClick={onClose}>Cancel</button>
+            <button className="clear-button" onClick={onClose}>Cancel</button>
             <button
               className="clear-button"
               onClick={() => {
@@ -34,23 +37,25 @@ class Actions extends React.Component {
           <div className='confirmation-box'>
             <h1>Are you sure?</h1>
             <p>Do you want to start a new game? All progress with the current game will be lost</p>
-            <button className ="clear-button" onClick={onClose}>Cancel</button>
-            <button
-              className="clear-button"
-              onClick={() => {
-                this.generateNewBoard(difficulty);
-                onClose();
-              }}
-            >
-              Start new Game
+            <div className="confirmation-button-section">
+              <button className="clear-button" onClick={onClose}>Cancel</button>
+              <button
+                className="clear-button"
+                onClick={() => {
+                  onClose();
+                  this.generateNewBoard(difficulty);
+                }}
+              >
+                Start new Game
             </button>
+            </div>
           </div>
         );
       }
     })
   }
 
-  generateNewBoard = (difficulty) =>{
+  generateNewBoard = (difficulty) => {
     this.props.generateNewBoard(difficulty)
   }
 
