@@ -1,3 +1,8 @@
+## Live Demo
+
+To check the live demo visit: [live demo](https://saljoedassery.github.io/sudoku-game/)
+
+
 ### Try out
 
 To try locally 
@@ -11,7 +16,7 @@ Then clone the repository
 
 ```sh
 $ git clone https://github.com/saljoedassery/sudoku-game.git
-$ cd tic-tac-toe
+$ cd sudoku-game
 $ npm install
 $ npm start
 ```
